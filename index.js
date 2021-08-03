@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+
+const port = process.env.PORT || 5000
+
 app.get("/", (req, res) => {
     res.send("root /");
 });
@@ -17,4 +20,4 @@ app.get("/:nome/:lang", (req, res) => {
     res.send(`<h1>/${nome}/${lang}</h1>`);
 });
 
-app.listen(3000,()=>{console.log("App rodando!");});
+app.listen(port,()=>{console.log(`Server rodando na porta ${port}`)});
